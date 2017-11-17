@@ -1,20 +1,33 @@
+# BobRossBot_ v0.3 (cleaned up code)
+# Created by /u/whaliam
+# 6Ep96ck9@protonmail.com
+# Import required libaries
+
+print("loading required libs")
+
 import praw
 import pdb
 import re
 import os
 import time
 import random
-from datetime import datetime
 import sys
+from datetime import datetime
+
+# Create Reddit instance
+# Setting variables
 print("logging in")
 reddit = praw.Reddit(user_agent='Bob Ross Bot v0.1',
                   client_id='g-gEG3suRUmjCg',
                   client_secret='_kjQZs-lv7Po7qXiRl_sgfEYoc8',
                   username='BobRossBot_',
                   password='0110101')
-# Quotes taken from: http://bobrossquotes.com/quotes.shtml
-from setuptools.command.rotate import rotate
+
+print("welcome BobRossBot_ :)")
+
+#Enter quotes in the string below
 print("loading quotes")
+
 ross_quotes = \
 [
 " Trees cover up a multitude of sins.",
@@ -89,23 +102,53 @@ ross_quotes = \
 
 " We don't make mistakes. We just have happy accidents. ",
 
+" You too can paint almighty pictures. ",
+
+" Don’t forget to make all these little things individuals — all of them special in their own way. ",
+
+" Talent is a pursued interest. Anything that you’re willing to practice, you can do. ",
+
+" Make love to the canvas. ",
+
+" Don’t forget to tell these special people in your life just how special they are to you. ",
+
+" Just let go — and fall like a little waterfall. ",
+
+" You can do anything you want to do. This is your world. ",
+
+" You can have anything you want in the world — once you help everyone around you get what they want. ",
+
+" If you do too much, it’s going to lose its effectiveness. ",
+
+" This is happy place; little squirrels live here and play. ",
+
+" Remember how free clouds are. They just lay around in the sky all day long ",
+
+" That’s where the crows will sit. But we’ll have to put an elevator to put them up there because they can’t fly, but they don’t know that, so they still try. ",
+
+" We don’t really know where this goes — and I’m not sure we really care. ",
+
+" Go out on a limb — that’s where the fruit is. ",
+
+" Isn’t it fantastic that you can change your mind and create all these happy things? ",
+
+" It’s life. It’s interesting. It’s fun. ",
+
 ]
-print("quotes loaded")
 username = "BobRossBot_"
-print("setting subreddit parameters")
+# Set subreddit parameters
 subreddit = reddit.subreddit("all")
+ross_reply = random.choice(ross_quotes)
 
-
-print("finding comment")
+# Set comment parameters
 for comment in subreddit.stream.comments():
     if re.search("Bob", comment.body, re.IGNORECASE):
-       print("comment found!")
-       print("preparing quote.")
-       ross_reply = random.choice(ross_quotes)
-       comment.reply(ross_reply)
-       print("replied with quote!")
-       print("cooldown")
-       print("waiting 2 seconds")
-       print("restarting")
+        print("comment found!")
+        print("preparing quote")
+        ross_reply = random.choice(ross_quotes)
+        comment.reply(ross_reply)
+        print("replied with quote!")
+        print("starting cooldown")
+        print("cooldown")
 # Created by /u/whaliam
 # 6Ep96ck9@protonmail.com
