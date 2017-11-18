@@ -1,4 +1,4 @@
-# BobRossBot_ v0.3 (cleaned up code)
+# BobRossBot_ v0.3 (cleaned up code) (added comments showing how to change reddit config settings)
 # Created by /u/whaliam
 # 6Ep96ck9@protonmail.com
 # Import required libaries
@@ -17,11 +17,11 @@ from datetime import datetime
 # Create Reddit instance
 # Setting variables
 print("logging in")
-reddit = praw.Reddit(user_agent='Bob Ross Bot v0.1',
-                  client_id='g-gEG3suRUmjCg',
-                  client_secret='_kjQZs-lv7Po7qXiRl_sgfEYoc8',
-                  username='BobRossBot_',
-                  password='0110101')
+reddit = praw.Reddit(user_agent='USERAGENT', # This can be anything you want, describe your bot. :)
+                  client_id='CLIENTID', # Reddit API client ID
+                  client_secret='PRIVATEKEY', # Reddit API private key
+                  username='USERNAME', # Reddit account username
+                  password='PASSWORD') # Reddit account password
 
 print("welcome BobRossBot_ :)")
 
