@@ -1,5 +1,5 @@
-# Bobrossbot v0.3
-BobRossBot_ v0.3
+# Bobrossbot v1.0
+BobRossBot_ v1.0
 
 A Bob Ross quote responder bot for Reddit :')
 
@@ -32,3 +32,7 @@ Created bu /u/whaliam
    -Added text output to show the progress of the python script while the script is running ex: print:("creating a Reddit instance")
       
    -Added even more Bob Ross quotes to the quotes library
+
+ **v1.0**: (11/22/17)
+ 
+  -Changed reply string so it only replies to "Bob Ross" ignoring the case.
