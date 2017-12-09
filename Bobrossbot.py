@@ -18,7 +18,6 @@ from datetime import datetime
 # Create Reddit instance
 # Setting variables
 print("logging in")
-
 reddit = praw.Reddit(user_agent='Bob Ross Bot v0.5',
                   client_id='<clientid>',
                   client_secret='<clientsecret>',
@@ -141,15 +140,17 @@ code = "^||[code](https://github.com/whaliam/BobRossBot) ^||[feedback💕](https
 username = "BobRossBot_"
 # Set subreddit parameters
 subreddit = reddit.subreddit("all")
-ross_reply = random.choice(ross_quotes)
+
 
 print("Searching for instances of 'Bob Ross'")
 
 # Set comment parameters
 for comment in subreddit.stream.comments():
+
     if re.search("Bob Ross", comment.body, re.IGNORECASE):
+        ross_reply = random.choice(ross_quotes)
         print("comment found!")
-        print("preparing quote")       
+        print("preparing quote")
         comment.reply(ross_reply + code)
         print("replied with quote!")
         print("starting cooldown")
